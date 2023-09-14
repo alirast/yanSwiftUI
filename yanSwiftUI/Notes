@@ -26,3 +26,6 @@ if we change the value - $, if no - without $
 
 //12
 List - for static or dynamic values
+
+//14
+group is just a container for other views 
