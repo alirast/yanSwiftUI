@@ -9,22 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
   
-  @State private var users = ["Ian", "Fiona", "Carl"]
+  @State private var selectedView = 1
   
   var body: some View {
-    NavigationView {
-      List {
-        ForEach(users, id: \.self) { user in
-          Text("\(user)")
+    TabView(selection: $selectedView) {
+      Text("First view")
+        .tabItem {
+          Image(systemName: "1.circle")
+          Text("First")
         }
-        .onMove(perform: move)
-      }
-      .navigationBarItems(trailing: EditButton())
+        .tag(1)
+      
+      Text("Second view")
+        .tabItem {
+          Image(systemName: "2.circle")
+          Text("Second")
+        }
+        .tag(2)
     }
-  }
-  
-  private func move(from source: IndexSet, to destination: Int) {
-    users.move(fromOffsets: source, toOffset: destination)
   }
 }
 
