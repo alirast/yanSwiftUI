@@ -9,29 +9,21 @@ import SwiftUI
 
 struct ContentView: View {
   
+  @State private var users = ["Ian", "Fiona", "Carl"]
+  
   var body: some View {
     NavigationView {
-      Text("swiftui")
-        .navigationTitle("Welcome")
-        .navigationBarTitleDisplayMode(.inline)
-      
-        .navigationBarItems(trailing:
-                              HStack {
-          Button {
-            print("about button tapped")
-          } label: {
-            Text("About")
-          }
-          
-          
-          Button {
-            print("help button tapped")
-          } label: {
-            Text("Help")
-          }
-          
-        })
+      List {
+        ForEach(users, id: \.self) { user in
+          Text("\(user)")
+        }
+        .onDelete(perform: delete)
+      }
     }
+  }
+  
+  private func delete(at offsets: IndexSet) {
+    users.remove(atOffsets: offsets)
   }
 }
 
