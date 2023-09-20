@@ -7,31 +7,31 @@
 
 import SwiftUI
 
-struct TaskRow: View {
-  var body: some View {
-    Text("Some task")
-  }
-}
-
 struct ContentView: View {
   
   var body: some View {
-    List {
-      Section(header: Text("Important tasks"),
-              footer: Text("End")) {
-        TaskRow()
-        TaskRow()
-        TaskRow()
-      }
+    NavigationView {
+      Text("swiftui")
+        .navigationTitle("Welcome")
+        .navigationBarTitleDisplayMode(.inline)
       
-      Section(header: Text("Other tasks")) {
-        TaskRow()
-        TaskRow()
-        TaskRow()
-      }
-      .listRowBackground(Color.yellow)
+        .navigationBarItems(trailing:
+                              HStack {
+          Button {
+            print("about button tapped")
+          } label: {
+            Text("About")
+          }
+          
+          
+          Button {
+            print("help button tapped")
+          } label: {
+            Text("Help")
+          }
+          
+        })
     }
-    .listStyle(.grouped)
   }
 }
 
