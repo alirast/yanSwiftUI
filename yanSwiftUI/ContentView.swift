@@ -7,24 +7,30 @@
 
 import SwiftUI
 
-//one line in our list
-struct MusicRow: View {
+struct Restaurant: Identifiable {
+  var id = UUID()
   var name: String
+}
+
+struct RestaurantRow: View {
+  var restaurant: Restaurant
   
   var body: some View {
-    Text("Music: \(name)")
+    Text("Come and eat at \(restaurant.name)")
   }
 }
 
 struct ContentView: View {
   
-  @State private var age = 18
-  
   var body: some View {
-    List {
-      MusicRow(name: "Rock")
-      MusicRow(name: "Rap")
-      MusicRow(name: "Classical")
+    let first = Restaurant(name: "First Restaurant")
+    let second = Restaurant(name: "Second Restaurant")
+    let third = Restaurant(name: "Third Restaurant")
+    
+    let restaurants = [first, second, third]
+    
+    return List(restaurants) { restaurant in
+      RestaurantRow(restaurant: restaurant)
     }
   }
 }
