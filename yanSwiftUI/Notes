@@ -23,3 +23,6 @@ For binding we use property wrappers. Property wrapper - now @State.
 We add them to our properties to observe the actions on the screen and our code. 
 
 if we change the value - $, if no - without $
+
+//12
+List - for static or dynamic values
