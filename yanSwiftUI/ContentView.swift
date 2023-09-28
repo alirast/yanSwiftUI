@@ -16,9 +16,9 @@ struct ContentView: View {
       .resizable()
       .aspectRatio(contentMode: .fit)
       .gesture(
-        LongPressGesture(minimumDuration: 2)
+        DragGesture(minimumDistance: 50)
           .onEnded { _ in
-            print("pressed")
+            print("dragged")
           }
       )
   }
