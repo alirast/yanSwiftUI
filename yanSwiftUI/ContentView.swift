@@ -12,21 +12,15 @@ struct ContentView: View {
   @State private var age = 18
   
   var body: some View {
-    VStack {
-      Image("people")
-        .resizable()
-        .aspectRatio(contentMode: .fit)
-      //how much times we need to tap to execute the code
-        .onTapGesture(count: 2) {
-          print("Double tapped")
-        }
-      Spacer()
-      Text("hello people")
-    }
-    .contentShape(Rectangle())
-    .onTapGesture {
-      print("hello apple")
-    }
+    Image("people")
+      .resizable()
+      .aspectRatio(contentMode: .fit)
+      .gesture(
+        LongPressGesture(minimumDuration: 2)
+          .onEnded { _ in
+            print("pressed")
+          }
+      )
   }
 }
 
