@@ -12,9 +12,12 @@ struct ContentView: View {
   @State private var age = 18
   
   var body: some View {
-    Text("tap me")
-      .onTapGesture {
-        print("tapped")
+    Image("people")
+      .resizable()
+      .aspectRatio(contentMode: .fit)
+    //how much times we need to tap to execute the code
+      .onTapGesture(count: 2) {
+        print("Double tapped")
       }
   }
 }
