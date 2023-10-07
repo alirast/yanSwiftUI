@@ -9,25 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
 
-  private var colors = ["black", "white", "red", "green", "blue"]
-  @State private var selectedColor = 0
+  @State private var age = 18
   
   var body: some View {
     VStack {
-      
-      Picker(selection: $selectedColor) {
-        
-        ForEach(0..<colors.count) { colorIndex in
-          Text(self.colors[colorIndex])
-        }
-        
-      } label: {
-        Text("choose a color")
-      }
-      .pickerStyle(.segmented)
-      .padding()
-      
-      Text("You selected \(colors[selectedColor])")
+      Stepper("Enter ur age", value: $age, in: 0...130)
+        .padding()
+      Text("Ur age is \(age)")
     }
   }
 }
