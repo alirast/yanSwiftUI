@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
   
-  @State private var name = ""
+  @State private var password = ""
   
   var body: some View {
     VStack {
-      TextField("Enter your name", text: $name)
-        .textFieldStyle(.roundedBorder)
+      SecureField("Enter ur password", text: $password)
         .padding()
-      Text("Hello, \(name)")
+      Text("Your entered \(password)")
     }
   }
 }
