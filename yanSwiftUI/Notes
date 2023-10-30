@@ -17,3 +17,7 @@ Images
 sfsymbols - edit like a text
 .clipShape(Circle()) - shape for the image
 background can be not just color - any View
+
+//5
+For binding we use property wrappers. Property wrapper - now @State.
+We add them to our properties to observe the actions on the screen and our code. 
