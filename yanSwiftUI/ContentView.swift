@@ -10,10 +10,9 @@ import SwiftUI
 struct ContentView: View {
   var body: some View {
     let colors = Gradient(colors: [.red, .yellow, .blue, .green, .purple])
-    let gradient = RadialGradient(gradient: colors, center: .center, startRadius: 50, endRadius: 200)
+    let gradient = AngularGradient(gradient: colors, center: .center)
     return Circle()
-      .fill(gradient)
-      .frame(width: 400, height: 400)
+      .strokeBorder(gradient, lineWidth: 30)
   }
 }
 
