@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
   var body: some View {
-    Text("apple")
-      .background(
-        Image("people")
-          .resizable()
-          .frame(width: 300, height: 250)
-      )
+    Text("hello")
+      .font(.largeTitle)
+      .padding()
+      .foregroundColor(.white)
+      .background(LinearGradient(gradient: Gradient(colors: [.black, .white]),
+                                 startPoint: .leading,
+                                 endPoint: .trailing))
   }
 }
 

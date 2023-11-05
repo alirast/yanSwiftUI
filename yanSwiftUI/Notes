@@ -16,3 +16,4 @@ lineLimit - the number of lines that we need
 Images
 sfsymbols - edit like a text
 .clipShape(Circle()) - shape for the image
+background can be not just color - any View
