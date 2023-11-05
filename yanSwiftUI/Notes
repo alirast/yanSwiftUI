@@ -1,0 +1,5 @@
+//2
+In stacks we have spacing property - it's the space between our elements in stack. Also alignment - alignment (in the stack) of the elements, the side (leading, trailing or center).
+Divider is just the line that divides our views.
+Padding - for example for the text - we make the frame space in the text - its bigger. By default it will be for all the sides. If we need just the special size - padding(.bottom, 50), for instance.
+Spacer - divides our view for equal parts. Spacer gets all the space.
