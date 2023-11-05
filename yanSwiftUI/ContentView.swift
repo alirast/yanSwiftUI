@@ -9,10 +9,9 @@ import SwiftUI
 
 struct ContentView: View {
   var body: some View {
-    Text("hello world")
-      .font(.largeTitle)
-      .padding()
-      .background(Color.gray)
+    Image("people")
+      .resizable()
+      .aspectRatio(contentMode: .fit)
   }
 }
 
