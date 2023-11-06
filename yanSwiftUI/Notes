@@ -29,3 +29,6 @@ List - for static or dynamic values
 
 //14
 group is just a container for other views 
+
+//16
+after closing the alert SwiftUI automatically changes showingAlert property to false again
