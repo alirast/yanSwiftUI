@@ -7,22 +7,21 @@
 
 import SwiftUI
 
-class User: ObservableObject {
-  @Published var firstName = "Ivan"
-  @Published var lastName = "petrov"
-}
-
 struct ContentView: View {
   
-  @ObservedObject var user = User()
+  @ObservedObject var settings = UserSettings()
 
   var body: some View {
     VStack {
-      Text("ur name is \(user.firstName) \(user.lastName)")
-      TextField("First name", text: $user.firstName)
-      TextField("First name", text: $user.lastName)
+      Text("Ur score is \(settings.score)")
+      
+      Button {
+        self.settings.score += 1
+      } label: {
+        Text("increase score")
+      }
+
     }
-    .padding()
   }
 }
 
