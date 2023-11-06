@@ -9,20 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
   
-  @State private var showingAlert = false
+  @State private var showingAlert1 = false
+  @State private var showingAlert2 = false
 
   var body: some View {
-    Button {
-      self.showingAlert = true
-    } label: {
-      Text("show alert")
+    HStack {
+      Button {
+        self.showingAlert1 = true
+      } label: {
+        Text("show 1")
+      }
+      
+      Button {
+        self.showingAlert2 = true
+      } label: {
+        Text("show 2")
+      }
     }
-    .alert(isPresented: $showingAlert) {
-      Alert(title: Text("Hello swiftUI"),
-            message: Text("Some detail msg"),
-            dismissButton: .default(Text("ok")))
+    .alert(isPresented: $showingAlert1) {
+      Alert(title: Text("One"), dismissButton: .cancel())
     }
-
+    
+    .alert(isPresented: $showingAlert2) {
+      Alert(title: Text("Two"), dismissButton: .cancel())
+    }
   }
 }
 
