@@ -7,24 +7,21 @@
 
 import SwiftUI
 
-struct CustomText: View {
-  var name: String
-  var body: some View {
-    Text(name)
+struct CustomModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
       .font(.largeTitle)
+      .foregroundColor(.white)
       .padding()
-      .foregroundColor(.red)
-      .background(Color.green)
+      .background(Color.black)
   }
 }
 
 struct ContentView: View {
 
   var body: some View {
-    VStack(spacing: 30) {
-      CustomText(name: "first")
-      CustomText(name: "second")
-    }
+    Text("hey")
+      .modifier(CustomModifier())
   }
 }
 
