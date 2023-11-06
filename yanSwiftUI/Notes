@@ -38,3 +38,4 @@ to one view - we cant make 2 alerts at the same time
 @State - working with data in one view, not in different views
 for communicating between 2 views we use classes. If we use structs - other view will not see it becuase of copy. But we need reference. @ObservedObject and @EnvironmentObject and @Published for properties of the class (if they change).
 @ObservedObject + ObservableObject - they can be used in more than one view and all the views will be updated.
+if we have data to share with all the views without giving them from one view to another - we can make EnvironmentObject and share this data.
