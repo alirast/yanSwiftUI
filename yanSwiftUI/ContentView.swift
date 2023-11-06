@@ -16,9 +16,11 @@ struct ContentView: View {
   var body: some View {
     NavigationView {
       Form {
-        Picker(selection: $selectedColor, label: Text("Select a color")) {
-          ForEach(0..<colors.count) {
-            Text(self.colors[$0])
+        Section(header: Text("Colors")) {
+          Picker(selection: $selectedColor, label: Text("Select a color")) {
+            ForEach(0..<colors.count) {
+              Text(self.colors[$0])
+            }
           }
         }
         .pickerStyle(.segmented)
