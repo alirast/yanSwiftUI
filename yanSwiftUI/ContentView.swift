@@ -7,18 +7,24 @@
 
 import SwiftUI
 
+struct CustomText: View {
+  var name: String
+  var body: some View {
+    Text(name)
+      .font(.largeTitle)
+      .padding()
+      .foregroundColor(.red)
+      .background(Color.green)
+  }
+}
+
 struct ContentView: View {
-  
-  @State private var useGreenText = false
 
   var body: some View {
-    Button {
-      self.useGreenText.toggle()
-    } label: {
-      Text("hello")
+    VStack(spacing: 30) {
+      CustomText(name: "first")
+      CustomText(name: "second")
     }
-    .foregroundColor(useGreenText ? .green : .black)
-
   }
 }
 
