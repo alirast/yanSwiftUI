@@ -7,29 +7,25 @@
 
 import SwiftUI
 
-struct CustomModifier: ViewModifier {
-  func body(content: Content) -> some View {
-    content
-      .font(.largeTitle)
-      .foregroundColor(.white)
-      .padding()
-      .background(Color.black)
-  }
+class User: ObservableObject {
+  @Published var firstName = "Ivan"
+  @Published var lastName = "petrov"
 }
 
 struct ContentView: View {
+  
+  @ObservedObject var user = User()
 
   var body: some View {
-    Text("hey")
-      .customM()
+    VStack {
+      Text("ur name is \(user.firstName) \(user.lastName)")
+      TextField("First name", text: $user.firstName)
+      TextField("First name", text: $user.lastName)
+    }
+    .padding()
   }
 }
 
-extension View {
-  func customM() -> some View {
-    self.modifier(CustomModifier())
-  }
-}
 
 #Preview {
   ContentView()
