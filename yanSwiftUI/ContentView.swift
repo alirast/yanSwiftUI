@@ -34,6 +34,7 @@ struct ContentView: View {
         }) {
           Text("Save changes")
         }
+        .disabled(!additionalSettings)
       }
       .navigationBarTitle("Settings")
     }
