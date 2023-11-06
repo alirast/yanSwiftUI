@@ -21,7 +21,13 @@ struct ContentView: View {
 
   var body: some View {
     Text("hey")
-      .modifier(CustomModifier())
+      .customM()
+  }
+}
+
+extension View {
+  func customM() -> some View {
+    self.modifier(CustomModifier())
   }
 }
 
